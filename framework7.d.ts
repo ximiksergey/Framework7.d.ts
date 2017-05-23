@@ -174,7 +174,7 @@ declare namespace Framework7 {
 	interface ActionSheetButton {
 		text: string;
 		bold?: boolean;
-		color?: string;
+		colo?: string;
 		bg?: string;
 		label?: boolean;
 		disabled?: boolean;
@@ -902,7 +902,7 @@ declare class Swiper {
 	params: Swiper.SwiperOptions;
 	container: Dom7.Dom7;
 	wrapper: Dom7.Dom7;
-	slides: Dom7.Dom7;
+	slides: Dom7.Dom7|any;
 	bullets: Dom7.Dom7;
 	width: number;
 	height: number;
@@ -938,6 +938,9 @@ declare class Swiper {
 	once(callback: string, handler: () => void): Swiper;
 	off(callback: string): Swiper;
 	lockSwipeToNext(): Swiper;
+	lazy: {
+		loadImageInSlide(index: number, loadInDuplicate?: boolean): void;
+	};
 	unlockSwipeToNext(): Swiper;
 	lockSwipeToPrev(): Swiper;
 	unlockSwipeToPrev(): Swiper;
